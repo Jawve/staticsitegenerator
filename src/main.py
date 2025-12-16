@@ -13,7 +13,9 @@ template_path = "./template.html"
 
 
 def main():
-    base_path = sys.argv[1] if len(sys.argv) >= 1 else "/"
+    base_path = "/"
+    if sys.argv[1]:
+        base_path = sys.argv[1]
     print(f"base_path is {base_path}")
     print("Deleting public directory...")
     if os.path.exists(dir_path_public):
